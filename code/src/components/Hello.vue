@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <el-button @click="btnTest">测试弹窗</el-button>
   </div>
 </template>
 
