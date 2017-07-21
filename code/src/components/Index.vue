@@ -1,18 +1,58 @@
 <template>
   <div class="index">
-    首页
+    <video
+      ref="refVideo"
+      class="index-video"
+      src="/static/video/indexvideo2.mp4"
+      poster
+      preload
+      autoplay
+      loop>
+    </video>
+    <div class="index-shade">
+      <my-header></my-header>
+    </div>
   </div>
 </template>
 <script>
+  import MyHeader from 'src/components/common/Header.vue'
+
   export default {
+    components: {
+      MyHeader
+    },
+    beforeMount () {
+    },
+    mounted () {
+    },
     data () {
       return {}
+    },
+    methods: {
     }
   }
 </script>
-<style scoped>
+<style scoped lang="scss">
   .index {
     width: 100%;
     height: 100%;
+    position: relative;
+    .index-video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0 0;
+    }
+    .index-shade {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+    }
   }
 </style>

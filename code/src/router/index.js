@@ -17,7 +17,7 @@ export default new Router({
     },
     {
       path: '*',
-      name: names.INDEX,
+      name: names.ERROR,
       component: Error
     }
   ]
