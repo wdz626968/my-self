@@ -11,15 +11,18 @@
     </video>
     <div class="index-shade">
       <my-header></my-header>
+      <self></self>
     </div>
   </div>
 </template>
 <script>
-  import MyHeader from 'src/components/common/Header.vue'
+  import MyHeader from './Header.vue'
+  import Self from './Self.vue'
 
   export default {
     components: {
-      MyHeader
+      MyHeader,
+      Self
     },
     beforeMount () {
     },
@@ -28,8 +31,7 @@
     data () {
       return {}
     },
-    methods: {
-    }
+    methods: {}
   }
 </script>
 <style scoped lang="scss">

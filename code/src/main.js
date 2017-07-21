@@ -9,8 +9,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)
 
-import './module/filters'
-import './module/permission'
+import './assets/js/filters'
+import './assets/js/permission'
 
 Vue.config.productionTip = false
 

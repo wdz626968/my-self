@@ -1,11 +1,12 @@
 <template>
-  <div>404</div>
+  <div>
+    我的简历
+  </div>
 </template>
 <script>
   export default {
     data () {
-      return {
-      }
+      return {}
     }
   }
 </script>
