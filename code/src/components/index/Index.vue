@@ -4,6 +4,7 @@
       ref="refVideo"
       class="index-video"
       src="/static/video/indexvideo2.mp4"
+      muted
       poster
       preload
       autoplay
@@ -17,7 +18,7 @@
 </template>
 <script>
   import MyHeader from './Header.vue'
-  import Self from './Self.vue'
+  import Self from './self/Self.vue'
 
   export default {
     components: {

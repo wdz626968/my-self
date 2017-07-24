@@ -1,14 +1,28 @@
 <template>
-  <header class="header">
-    <h4 class="header-title">时光荏苒，初心依旧</h4>
-    <ul class="header-menu">
-      <li v-for="(item, index) in menu.list"
-          @click="handleRouter(item, index)"
-          :class="{'li-active': index === menu.active}">
-        {{item.text}}
-      </li>
-    </ul>
-  </header>
+  <div class="clear-float">
+    <!-- 大屏 -->
+    <header class="header header-layout col-sm-6 hidden-xs">
+      <h4 class="header-title">时光荏苒，初心依旧</h4>
+      <ul class="header-menu">
+        <li v-for="(item, index) in menu.list"
+            @click="handleRouter(item, index)"
+            :class="{'li-active': index === menu.active}">
+          {{item.text}}
+        </li>
+      </ul>
+    </header>
+
+    <!-- 手持 -->
+    <header class="header col-sm-12 visible-xs">
+      <ul class="header-menu header-menu-2">
+        <li v-for="(item, index) in menu.list"
+            @click="handleRouter(item, index)"
+            :class="{'li-active': index === menu.active}">
+          {{item.text}}
+        </li>
+      </ul>
+    </header>
+  </div>
 </template>
 <script>
   import * as names from 'src/router/names'
@@ -43,16 +57,21 @@
     text-decoration: none;
   }
 
+  .clear-float {
+    overflow: hidden;
+  }
+
   .header {
     width: 100%;
-    padding: 0 20px;
+    padding: 10px 20px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .8);
+  }
 
+  .header-layout {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
   }
 
   .header-title {
@@ -60,27 +79,30 @@
     font-size: 25px;
   }
 
-  .header-menu {
-    list-style: none;
-    color: #fff;
-
+  ul.header-menu {
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
-    li {
-      width: 60px;
-      height: 60px;
-      border-radius: 100%;
-      text-align: center;
-      border: 1px solid #fff;
-      margin-left: 10px;
-      cursor: pointer;
-      overflow: hidden;
+    margin: 0;
+    padding: 0;
 
+    list-style: none;
+    color: #fff;
+    li {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      width: 60px;
+      height: 60px;
+      margin-left: 10px;
+
+      border-radius: 100%;
+      text-align: center;
+      border: 1px solid #fff;
+      cursor: pointer;
+      overflow: hidden;
       &:hover {
         border-color: #3c8dbc;
         background-color: #3c8dbc;
@@ -90,6 +112,15 @@
     .li-active {
       border-color: #3c8dbc;
       background-color: #3c8dbc;
+    }
+  }
+
+  ul.header-menu-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      margin: 0;
     }
   }
 </style>
