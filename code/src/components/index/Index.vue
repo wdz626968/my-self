@@ -39,11 +39,8 @@
   .index {
     width: 100%;
     height: 100%;
-    position: relative;
     .index-video {
-      position: absolute;
-      left: 0;
-      top: 0;
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
